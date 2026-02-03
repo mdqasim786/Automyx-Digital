@@ -1,5 +1,5 @@
 import './App.css'
-import Automyx from './automyx'
+import Automyx from './AutomyxLanding'
 
 function App() {
 
