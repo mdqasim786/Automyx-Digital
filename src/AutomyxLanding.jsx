@@ -215,27 +215,31 @@ export default function AutomyxLanding() {
   const services = [
     {
       title: "Website Development",
-      icon: <><line x1="3" y1="9" x2="21" y2="9"/><path d="M3 9V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="7" cy="6" r="0.8" fill="rgba(255,255,255,.5)"/><circle cx="10" cy="6" r="0.8" fill="rgba(255,255,255,.5)"/><circle cx="13" cy="6" r="0.8" fill="rgba(255,255,255,.5)"/></>,
+      icon: <><rect x="2" y="3" width="20" height="14" rx="2" strokeWidth="1.8"/><line x1="2" y1="7" x2="22" y2="7" strokeWidth="1.8"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><circle cx="8" cy="5" r="0.8" fill="currentColor"/><circle cx="11" cy="5" r="0.8" fill="currentColor"/><path d="M8 11h8M8 14h5" strokeWidth="1.5"/></>,
       body: "Custom-designed websites that make a strong first impression and help convert visitors into customers.",
-      outcome: "A professional online presence that builds trust"
+      outcome: "A professional online presence that builds trust",
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Business Applications",
-      icon: <><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="8" x2="21" y2="8"/><line x1="7" y1="13" x2="13" y2="13"/><line x1="7" y1="16" x2="11" y2="16"/></>,
+      icon: <><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.8"/><line x1="3" y1="9" x2="21" y2="9" strokeWidth="1.8"/><rect x="7" y="13" width="4" height="1.5" rx="0.5" fill="currentColor"/><rect x="7" y="16" width="6" height="1.5" rx="0.5" fill="currentColor"/><circle cx="17" cy="14.5" r="1.2" fill="currentColor"/></>,
       body: "Custom software solutions like booking systems, client portals, and management tools tailored to your business.",
-      outcome: "Streamlined operations that save time and reduce costs"
+      outcome: "Streamlined operations that save time and reduce costs",
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "AI & Automation",
-      icon: <><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></>,
+      icon: <><circle cx="12" cy="12" r="3" strokeWidth="1.8"/><path d="M12 1v3M12 20v3M23 12h-3M4 12H1" strokeWidth="1.8" strokeLinecap="round"/><path d="M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6" strokeWidth="1.5" strokeLinecap="round"/></>,
       body: "Smart automation for tasks like appointment reminders, lead follow-ups, and data processing that runs 24/7.",
-      outcome: "More done with less manual work"
+      outcome: "More done with less manual work",
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Design & Branding",
-      icon: <><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></>,
+      icon: <><path d="M12 2l-8 4.5v9l8 4.5 8-4.5v-9z" strokeWidth="1.8" fill="none"/><circle cx="12" cy="11" r="2.5" strokeWidth="1.5"/><path d="M12 2v6M12 14v6" strokeWidth="1.5" strokeLinecap="round"/></>,
       body: "Professional design that clearly communicates what you do and makes your business look credible and trustworthy.",
-      outcome: "A brand that stands out from competitors"
+      outcome: "A brand that stands out from competitors",
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     }
   ];
 
@@ -258,15 +262,15 @@ export default function AutomyxLanding() {
   /* ── pricing data ── */
   const tiers = [
     {
-      tier: "Starter", name: "Website", price: "$3,500", featured: false,
+      tier: "Starter", name: "Website", price: "$3,500", pkrPrice: "PKR 975,000", featured: false,
       features: ["Professional custom website", "Mobile-friendly design", "Fast loading speed", "Easy content updates", "1 month of support included"]
     },
     {
-      tier: "Professional", name: "Website + Features", price: "$9,800", featured: true,
+      tier: "Professional", name: "Website + Features", price: "$9,800", pkrPrice: "PKR 2,730,000", featured: true,
       features: ["Everything in Starter", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
     },
     {
-      tier: "Enterprise", name: "Full Solution", price: "Custom", featured: false,
+      tier: "Enterprise", name: "Full Solution", price: "Custom", pkrPrice: "Custom Pricing", featured: false,
       features: ["Complete business application", "Advanced automation", "Custom integrations", "Full branding package", "Ongoing support available"]
     }
   ];
@@ -391,10 +395,10 @@ export default function AutomyxLanding() {
             ].map((item, i) => (
               <Reveal key={i} delay={i + 1}>
                 <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 300, color: ACCENT, minWidth: 28, lineHeight: 1.3 }}>{item.n}</span>
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 300, color: ACCENT, minWidth: 32, lineHeight: 1.3 }}>{item.n}</span>
                   <div>
-                    <p style={{ fontSize: 15, fontWeight: 500, color: INK, marginBottom: 6 }}>{item.t}</p>
-                    <p style={{ fontSize: 14, color: "rgba(14,14,15,.5)", lineHeight: 1.6 }}>{item.b}</p>
+                    <p style={{ fontSize: 17, fontWeight: 500, color: INK, marginBottom: 8 }}>{item.t}</p>
+                    <p style={{ fontSize: 15, color: "rgba(14,14,15,.5)", lineHeight: 1.65 }}>{item.b}</p>
                   </div>
                 </div>
               </Reveal>
@@ -407,7 +411,7 @@ export default function AutomyxLanding() {
       <section id="services" style={{ background: INK, padding: "88px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <div style={{ textAlign: "center", marginBottom: 52 }}>
               <span style={labelStyle}>Our Services</span>
               <h2 style={{ ...displayMd, fontSize: "clamp(30px, 4vw, 44px)", color: WHITE }}>
                 Complete digital solutions for your business
@@ -415,27 +419,50 @@ export default function AutomyxLanding() {
             </div>
           </Reveal>
 
-          <div className="amx-svc-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 1, background: "rgba(255,255,255,.06)", borderRadius: 12, overflow: "hidden", border: "1px solid rgba(255,255,255,.06)" }}>
+          <div className="amx-svc-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, background: "transparent" , alignItems: "stretch"}}>
             {services.map((svc, i) => (
               <Reveal key={i} delay={i + 1}>
-                <div className="amx-svc" style={{ background: INK, padding: "40px 28px", transition: "background .35s", cursor: "default" }}
-                  onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,.035)"}
-                  onMouseLeave={e => e.currentTarget.style.background = INK}
+                <div className="amx-svc" style={{ 
+                  background: INK, 
+                  padding: "44px 32px", 
+                  transition: "all .4s",
+                  cursor: "default",
+                  borderRadius: 14,
+                  border: "2px solid transparent",
+                  backgroundImage: `linear-gradient(${INK}, ${INK}), ${svc.borderGradient}`,
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
+                  position: "relative",
+                  overflow: "hidden",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column"
+                }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.boxShadow = "0 12px 40px rgba(200,169,110,0.15)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 >
                   <div className="amx-svc-icon" style={{
-                    width: 40, height: 40, borderRadius: 9,
-                    border: "1px solid rgba(255,255,255,.1)", display: "flex", alignItems: "center", justifyContent: "center",
-                    marginBottom: 24, transition: "border-color .35s"
+                    width: 48, height: 48, borderRadius: 10,
+                    border: "1.5px solid rgba(255,255,255,.15)", 
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    marginBottom: 28, transition: "all .4s",
+                    background: "rgba(255,255,255,.02)"
                   }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "stroke .35s" }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "stroke .35s" }}>
                       {svc.icon}
                     </svg>
                   </div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 21, fontWeight: 400, color: WHITE, marginBottom: 10 }}>{svc.title}</h3>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,.32)", lineHeight: 1.6 }}>{svc.body}</p>
-                  <div style={{ marginTop: 20, paddingTop: 16, borderTop: "1px solid rgba(255,255,255,.06)" }}>
-                    <span style={{ fontSize: 10, color: ACCENT, letterSpacing: "0.1em", fontWeight: 500 }}>OUTCOME </span>
-                    <span style={{ fontSize: 12, color: "rgba(255,255,255,.3)" }}>{svc.outcome}</span>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: WHITE, marginBottom: 12 }}>{svc.title}</h3>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,.36)", lineHeight: 1.7 }}>{svc.body}</p>
+                  <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,.08)" }}>
+                    <span style={{ fontSize: 10, color: ACCENT, letterSpacing: "0.12em", fontWeight: 600 }}>OUTCOME </span>
+                    <span style={{ fontSize: 13, color: "rgba(255,255,255,.35)", display: "block", marginTop: 6, lineHeight: 1.5 }}>{svc.outcome}</span>
                   </div>
                 </div>
               </Reveal>
@@ -459,10 +486,10 @@ export default function AutomyxLanding() {
             <div className="amx-why-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px 24px" }}>
               {whys.map((w, i) => (
                 <Reveal key={i} delay={i + 1}>
-                  <div className="amx-why-card" style={{ borderTop: "1px solid rgba(14,14,15,.12)", paddingTop: 18, transition: "border-color .3s" }}>
-                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: ACCENT, display: "block", marginBottom: 10 }}>{w.num}</span>
-                    <h3 style={{ fontSize: 15, fontWeight: 500, color: INK, marginBottom: 8 }}>{w.title}</h3>
-                    <p style={{ fontSize: 13, color: "rgba(14,14,15,.48)", lineHeight: 1.6 }}>{w.body}</p>
+                  <div className="amx-why-card" style={{ borderTop: "1px solid rgba(14,14,15,.12)", paddingTop: 20, transition: "border-color .3s" }}>
+                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 16, color: ACCENT, display: "block", marginBottom: 12, fontWeight: 500 }}>{w.num}</span>
+                    <h3 style={{ fontSize: 17, fontWeight: 500, color: INK, marginBottom: 10 }}>{w.title}</h3>
+                    <p style={{ fontSize: 15, color: "rgba(14,14,15,.5)", lineHeight: 1.65 }}>{w.body}</p>
                   </div>
                 </Reveal>
               ))}
@@ -480,22 +507,22 @@ export default function AutomyxLanding() {
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
               {steps.map((s, i) => (
                 <Reveal key={i} delay={i + 1}>
-                  <div className="amx-proc-step" style={{ display: "flex", gap: 18, alignItems: "flex-start", cursor: "default", paddingBottom: i < steps.length - 1 ? 22 : 0 }}>
+                  <div className="amx-proc-step" style={{ display: "flex", gap: 20, alignItems: "flex-start", cursor: "default", paddingBottom: i < steps.length - 1 ? 26 : 0 }}>
                     {/* Vertical connector */}
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <div className="amx-proc-dot" style={{
-                        width: 38, height: 38, borderRadius: "50%",
-                        border: "1px solid rgba(14,14,15,.18)", background: "transparent",
+                        width: 42, height: 42, borderRadius: "50%",
+                        border: "1.5px solid rgba(14,14,15,.2)", background: "transparent",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         transition: "border-color .35s", flexShrink: 0
                       }}>
-                        <span className="amx-proc-num" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 15, fontWeight: 300, color: "rgba(14,14,15,.4)", transition: "color .35s" }}>{s.n}</span>
+                        <span className="amx-proc-num" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 400, color: "rgba(14,14,15,.45)", transition: "color .35s" }}>{s.n}</span>
                       </div>
-                      {i < steps.length - 1 && <div style={{ width: 1, height: 22, background: "rgba(14,14,15,.1)" }} />}
+                      {i < steps.length - 1 && <div style={{ width: 1, height: 26, background: "rgba(14,14,15,.12)" }} />}
                     </div>
-                    <div style={{ paddingTop: 6 }}>
-                      <p style={{ fontSize: 15, fontWeight: 500, color: INK, marginBottom: 4 }}>{s.title}</p>
-                      <p style={{ fontSize: 13, color: "rgba(14,14,15,.48)", lineHeight: 1.55 }}>{s.body}</p>
+                    <div style={{ paddingTop: 8 }}>
+                      <p style={{ fontSize: 17, fontWeight: 500, color: INK, marginBottom: 6 }}>{s.title}</p>
+                      <p style={{ fontSize: 15, color: "rgba(14,14,15,.5)", lineHeight: 1.65 }}>{s.body}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -539,8 +566,11 @@ export default function AutomyxLanding() {
                   )}
                   <span style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: ACCENT, fontWeight: 500, display: "block", marginBottom: 14 }}>{t.tier}</span>
                   <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 400, color: WHITE, marginBottom: 6 }}>{t.name}</h3>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,.3)", marginBottom: 28, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,.07)" }}>
-                    Starting from <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 300, color: WHITE }}>{t.price}</span>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,.3)", marginBottom: 8 }}>
+                    Starting from <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 300, color: WHITE, display: "block", marginTop: 4 }}>{t.price}</span>
+                  </p>
+                  <p style={{ fontSize: 12, color: "rgba(255,255,255,.25)", marginBottom: 24, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,.07)" }}>
+                    {t.pkrPrice}
                   </p>
 
                   <ul style={{ listStyle: "none", marginBottom: 28 }}>
@@ -564,7 +594,7 @@ export default function AutomyxLanding() {
                       transition: "background .3s"
                     }}
                   >
-                    Get a quote
+                    Let's discuss
                   </button>
                 </div>
               </Reveal>
@@ -617,7 +647,7 @@ export default function AutomyxLanding() {
             {/* Social icons */}
             <div style={{ display: "flex", gap: 14 }}>
               <a 
-                href="https://github.com/automyx" 
+                href="https://linkedin.com/company/automyx" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{
@@ -640,7 +670,7 @@ export default function AutomyxLanding() {
                   onMouseEnter={(e) => e.currentTarget.style.fill = "rgba(200,169,110,1)"}
                   onMouseLeave={(e) => e.currentTarget.style.fill = "rgba(255,255,255,.4)"}
                 >
-                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
               <a 
