@@ -265,21 +265,21 @@ export default function AutomyxLanding() {
       icon: <><rect x="2" y="3" width="20" height="14" rx="2" strokeWidth="1.8"/><line x1="2" y1="7" x2="22" y2="7" strokeWidth="1.8"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><circle cx="8" cy="5" r="0.8" fill="currentColor"/><circle cx="11" cy="5" r="0.8" fill="currentColor"/><path d="M8 11h8M8 14h5" strokeWidth="1.5"/></>,
       body: "Custom-designed websites that make a strong first impression and help convert visitors into customers.",
       outcome: "A professional online presence that builds trust",
-      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.5), rgba(200,169,110,0.2))"
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Business Applications",
       icon: <><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.8"/><line x1="3" y1="9" x2="21" y2="9" strokeWidth="1.8"/><rect x="7" y="13" width="4" height="1.5" rx="0.5" fill="currentColor"/><rect x="7" y="16" width="6" height="1.5" rx="0.5" fill="currentColor"/><circle cx="17" cy="14.5" r="1.2" fill="currentColor"/></>,
       body: "Custom software solutions like booking systems, client portals, and management tools tailored to your business.",
       outcome: "Streamlined operations that save time and reduce costs",
-      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.4), rgba(244,241,236,0.15))"
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "AI & Automation",
       icon: <><circle cx="12" cy="12" r="3" strokeWidth="1.8"/><path d="M12 1v3M12 20v3M23 12h-3M4 12H1" strokeWidth="1.8" strokeLinecap="round"/><path d="M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6" strokeWidth="1.5" strokeLinecap="round"/></>,
       body: "Smart automation for tasks like appointment reminders, lead follow-ups, and data processing that runs 24/7.",
       outcome: "More done with less manual work",
-      borderGradient: "linear-gradient(135deg, rgba(244,241,236,0.2), rgba(200,169,110,0.35))"
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Design & Branding",
