@@ -262,11 +262,11 @@ export default function AutomyxLanding() {
   /* ── pricing data ── */
   const tiers = [
     {
-      tier: "Starter", name: "Website", price: "$3,500", pkrPrice: "PKR 975,000", featured: false,
+      tier: "Business Website", name: "Website", price: "$299", pkrPrice: "PKR 80,000", featured: false,
       features: ["Professional custom website", "Mobile-friendly design", "Fast loading speed", "Easy content updates", "1 month of support included"]
     },
     {
-      tier: "Professional", name: "Website + Features", price: "$9,800", pkrPrice: "PKR 2,730,000", featured: true,
+      tier: "Professional", name: "Website + Features", price: "$999", pkrPrice: "PKR 280,000", featured: true,
       features: ["Everything in Starter", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
     },
     {
@@ -351,7 +351,7 @@ export default function AutomyxLanding() {
           </Reveal>
           <Reveal delay={3}>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-              <a href="#contact" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("contact"); }} style={{
+              <a href="#pricing" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }} style={{
                 display: "inline-flex", alignItems: "center", gap: 10,
                 background: ACCENT, color: INK, padding: "14px 30px", borderRadius: 6,
                 fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
@@ -624,7 +624,7 @@ export default function AutomyxLanding() {
             </p>
           </Reveal>
           <Reveal delay={3}>
-            <a href="mailto:hello@automyx.digital" className="amx-btn-primary" style={{
+            <a href="mailto:automyxdigital@gmail.com" className="amx-btn-primary" style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               background: ACCENT, color: INK, padding: "15px 34px", borderRadius: 6,
               fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
