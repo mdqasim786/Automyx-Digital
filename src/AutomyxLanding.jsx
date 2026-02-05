@@ -66,6 +66,53 @@ const GLOBAL_CSS = `
     .amx-svc-grid { grid-template-columns:1fr !important; }
     .amx-proc-row { grid-template-columns:1fr !important; }
   }
+
+  /* ── WhatsApp Floating Button ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    z-index: 999;
+    transition: transform .3s ease, box-shadow .3s ease;
+    animation: whatsapp-pulse 2s infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+  }
+  .whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+  }
+  @keyframes whatsapp-pulse {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7);
+    }
+  }
+  @media(max-width:480px){
+    .whatsapp-float {
+      width: 56px;
+      height: 56px;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
 `;
 
 /* ─────────────────────────────────────────────
@@ -218,21 +265,21 @@ export default function AutomyxLanding() {
       icon: <><rect x="2" y="3" width="20" height="14" rx="2" strokeWidth="1.8"/><line x1="2" y1="7" x2="22" y2="7" strokeWidth="1.8"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><circle cx="8" cy="5" r="0.8" fill="currentColor"/><circle cx="11" cy="5" r="0.8" fill="currentColor"/><path d="M8 11h8M8 14h5" strokeWidth="1.5"/></>,
       body: "Custom-designed websites that make a strong first impression and help convert visitors into customers.",
       outcome: "A professional online presence that builds trust",
-      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.5), rgba(200,169,110,0.2))"
     },
     {
       title: "Business Applications",
       icon: <><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.8"/><line x1="3" y1="9" x2="21" y2="9" strokeWidth="1.8"/><rect x="7" y="13" width="4" height="1.5" rx="0.5" fill="currentColor"/><rect x="7" y="16" width="6" height="1.5" rx="0.5" fill="currentColor"/><circle cx="17" cy="14.5" r="1.2" fill="currentColor"/></>,
       body: "Custom software solutions like booking systems, client portals, and management tools tailored to your business.",
       outcome: "Streamlined operations that save time and reduce costs",
-      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
+      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.4), rgba(244,241,236,0.15))"
     },
     {
       title: "AI & Automation",
       icon: <><circle cx="12" cy="12" r="3" strokeWidth="1.8"/><path d="M12 1v3M12 20v3M23 12h-3M4 12H1" strokeWidth="1.8" strokeLinecap="round"/><path d="M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6" strokeWidth="1.5" strokeLinecap="round"/></>,
       body: "Smart automation for tasks like appointment reminders, lead follow-ups, and data processing that runs 24/7.",
       outcome: "More done with less manual work",
-      borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
+      borderGradient: "linear-gradient(135deg, rgba(244,241,236,0.2), rgba(200,169,110,0.35))"
     },
     {
       title: "Design & Branding",
@@ -262,12 +309,12 @@ export default function AutomyxLanding() {
   /* ── pricing data ── */
   const tiers = [
     {
-      tier: "Business Website", name: "Website", price: "$299", pkrPrice: "PKR 80,000", featured: false,
+      tier: "Starter", name: "Website", price: "$3,500", pkrPrice: "PKR 975,000", featured: false,
       features: ["Professional custom website", "Mobile-friendly design", "Fast loading speed", "Easy content updates", "1 month of support included"]
     },
     {
-      tier: "Professional", name: "Website + Features", price: "$999", pkrPrice: "PKR 280,000", featured: true,
-      features: ["Everything in Business Website", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
+      tier: "Professional", name: "Website + Features", price: "$9,800", pkrPrice: "PKR 2,730,000", featured: true,
+      features: ["Everything in Starter", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
     },
     {
       tier: "Enterprise", name: "Full Solution", price: "Custom", pkrPrice: "Custom Pricing", featured: false,
@@ -351,7 +398,7 @@ export default function AutomyxLanding() {
           </Reveal>
           <Reveal delay={3}>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-              <a href="#pricing" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }} style={{
+              <a href="#contact" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("contact"); }} style={{
                 display: "inline-flex", alignItems: "center", gap: 10,
                 background: ACCENT, color: INK, padding: "14px 30px", borderRadius: 6,
                 fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
@@ -411,7 +458,7 @@ export default function AutomyxLanding() {
       <section id="services" style={{ background: INK, padding: "88px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <div style={{ textAlign: "center", marginBottom: 56 }}>
               <span style={labelStyle}>Our Services</span>
               <h2 style={{ ...displayMd, fontSize: "clamp(30px, 4vw, 44px)", color: WHITE }}>
                 Complete digital solutions for your business
@@ -419,7 +466,7 @@ export default function AutomyxLanding() {
             </div>
           </Reveal>
 
-          <div className="amx-svc-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, background: "transparent" , alignItems: "stretch"}}>
+          <div className="amx-svc-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, background: "transparent" }}>
             {services.map((svc, i) => (
               <Reveal key={i} delay={i + 1}>
                 <div className="amx-svc" style={{ 
@@ -433,10 +480,7 @@ export default function AutomyxLanding() {
                   backgroundOrigin: "border-box",
                   backgroundClip: "padding-box, border-box",
                   position: "relative",
-                  overflow: "hidden",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column"
+                  overflow: "hidden"
                 }}
                   onMouseEnter={e => {
                     e.currentTarget.style.transform = "translateY(-4px)";
@@ -624,7 +668,7 @@ export default function AutomyxLanding() {
             </p>
           </Reveal>
           <Reveal delay={3}>
-            <a href="mailto:automyxdigital@gmail.com" className="amx-btn-primary" style={{
+            <a href="mailto:hello@automyx.digital" className="amx-btn-primary" style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               background: ACCENT, color: INK, padding: "15px 34px", borderRadius: 6,
               fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
@@ -638,6 +682,26 @@ export default function AutomyxLanding() {
           </Reveal>
         </div>
       </section>
+
+      {/* ══════════ WHATSAPP FLOATING BUTTON ══════════ */}
+      <a 
+        href="https://wa.me/923001234567?text=Hi%2C%20I%27m%20interested%20in%20your%20services" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" fill="none">
+          <path 
+            d="M16 0C7.164 0 0 7.164 0 16c0 2.825.74 5.478 2.028 7.784L0 32l8.384-2.196A15.934 15.934 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0z" 
+            fill="#fff"
+          />
+          <path 
+            d="M25.36 22.677c-.368 1.04-1.834 1.903-2.995 2.148-.794.165-1.83.298-5.316-1.144-4.47-1.847-7.354-6.36-7.576-6.653-.222-.293-1.815-2.417-1.815-4.61 0-2.193 1.15-3.27 1.558-3.716.408-.445.89-.557 1.187-.557.297 0 .595.003.856.016.275.014.644-.105.997.76.368.9 1.248 3.046 1.358 3.27.11.223.183.483.037.777-.147.293-.22.476-.442.732-.222.256-.467.573-.667.77-.222.22-.453.458-.195.898.259.44 1.15 1.898 2.47 3.074 1.698 1.515 3.129 1.986 3.573 2.21.445.223.705.186.964-.11.259-.294.964-1.072 1.222-1.442.259-.37.518-.31.964-.185.445.124 2.83 1.334 3.316 1.577.483.242.806.37.922.577.11.208.11 1.186-.258 2.226z" 
+            fill="#25D366"
+          />
+        </svg>
+      </a>
 
       {/* ══════════ FOOTER ══════════ */}
       <footer style={{ background: "#0a0a0b", borderTop: "1px solid rgba(255,255,255,.05)", padding: "28px 32px" }}>
