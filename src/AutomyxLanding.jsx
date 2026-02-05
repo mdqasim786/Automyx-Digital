@@ -267,7 +267,7 @@ export default function AutomyxLanding() {
     },
     {
       tier: "Professional", name: "Website + Features", price: "$999", pkrPrice: "PKR 280,000", featured: true,
-      features: ["Everything in Starter", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
+      features: ["Everything in Business Website", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
     },
     {
       tier: "Enterprise", name: "Full Solution", price: "Custom", pkrPrice: "Custom Pricing", featured: false,
