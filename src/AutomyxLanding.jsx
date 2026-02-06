@@ -8,7 +8,7 @@ const GLOBAL_CSS = `
 
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; overflow-x:hidden; }
-  body { -webkit-font-smoothing:antialiased; font-family:'DM Sans',sans-serif; }
+  body { -webkit-font-smoothing:antialiased; font-family:'DM Sans',sans-serif; background:#0e0e0f; }
 
   /* ── Reveal animation ── */
   .amx-reveal {
@@ -52,6 +52,9 @@ const GLOBAL_CSS = `
 
   /* ── Pricing CTA hover (light) ── */
   .amx-price-cta-light:hover { background:rgba(14,14,15,.07) !important; }
+
+  /* ── Who We Work With card hover ── */
+  .amx-who-card:hover { border-color:rgba(200,169,110,.3) !important; box-shadow:0 8px 24px rgba(200,169,110,.08) !important; }
 
   /* ── Mobile ── */
   @media(max-width:720px){
@@ -263,29 +266,29 @@ export default function AutomyxLanding() {
     {
       title: "Website Development",
       icon: <><rect x="2" y="3" width="20" height="14" rx="2" strokeWidth="1.8"/><line x1="2" y1="7" x2="22" y2="7" strokeWidth="1.8"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/><circle cx="8" cy="5" r="0.8" fill="currentColor"/><circle cx="11" cy="5" r="0.8" fill="currentColor"/><path d="M8 11h8M8 14h5" strokeWidth="1.5"/></>,
-      body: "Custom-designed websites that make a strong first impression and help convert visitors into customers.",
-      outcome: "A professional online presence that builds trust",
+      body: "Custom-designed websites that attract customers and make a strong first impression. Built to load fast and convert visitors into paying clients.",
+      outcome: "More customers finding and trusting your business",
       borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Business Applications",
       icon: <><rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="1.8"/><line x1="3" y1="9" x2="21" y2="9" strokeWidth="1.8"/><rect x="7" y="13" width="4" height="1.5" rx="0.5" fill="currentColor"/><rect x="7" y="16" width="6" height="1.5" rx="0.5" fill="currentColor"/><circle cx="17" cy="14.5" r="1.2" fill="currentColor"/></>,
-      body: "Custom software solutions like booking systems, client portals, and management tools tailored to your business.",
-      outcome: "Streamlined operations that save time and reduce costs",
+      body: "Custom software like booking systems, client portals, and management tools that make your business run smoother and save hours every week.",
+      outcome: "Less manual work, more time for what matters",
       borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "AI & Automation",
       icon: <><circle cx="12" cy="12" r="3" strokeWidth="1.8"/><path d="M12 1v3M12 20v3M23 12h-3M4 12H1" strokeWidth="1.8" strokeLinecap="round"/><path d="M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6" strokeWidth="1.5" strokeLinecap="round"/></>,
-      body: "Smart automation for tasks like appointment reminders, lead follow-ups, and data processing that runs 24/7.",
-      outcome: "More done with less manual work",
+      body: "Smart automation for repetitive tasks—appointment reminders, lead follow-ups, data entry. Works 24/7 so you don't have to.",
+      outcome: "Save hours every week on manual tasks",
       borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     },
     {
       title: "Design & Branding",
       icon: <><path d="M12 2l-8 4.5v9l8 4.5 8-4.5v-9z" strokeWidth="1.8" fill="none"/><circle cx="12" cy="11" r="2.5" strokeWidth="1.5"/><path d="M12 2v6M12 14v6" strokeWidth="1.5" strokeLinecap="round"/></>,
-      body: "Professional design that clearly communicates what you do and makes your business look credible and trustworthy.",
-      outcome: "A brand that stands out from competitors",
+      body: "Professional design that clearly shows what you do and why clients should choose you. Stand out from competitors with a memorable brand.",
+      outcome: "A brand that attracts the right customers",
       borderGradient: "linear-gradient(135deg, rgba(200,169,110,0.6), rgba(200,169,110,0.25))"
     }
   ];
@@ -296,30 +299,71 @@ export default function AutomyxLanding() {
     { num: "II", title: "Business-focused approach", body: "We start by understanding your goals and target customers, then design solutions that help you reach them." },
     { num: "III", title: "Direct access to our team", body: "You'll work directly with the developers and designers building your project. No middlemen, no delays." },
     { num: "IV", title: "Full ownership", body: "You own everything we build—complete source code, all files, no hidden fees or platform lock-ins." }
-  ];
+  ]
 
   /* ── process data ── */
   const steps = [
-    { n: "01", title: "Discovery Call", body: "We discuss your business, goals, and what you need. We'll explain how we can help and answer all your questions." },
-    { n: "02", title: "Planning", body: "We create a detailed plan and timeline. You'll know exactly what we're building and how much it will cost before we start." },
-    { n: "03", title: "Development", body: "We build your project and keep you updated throughout. You can review progress and request changes as we go." },
-    { n: "04", title: "Launch & Support", body: "We test everything thoroughly, help you launch, and provide support to ensure everything runs smoothly." }
+    { n: "01", title: "Discovery Call", body: "We discuss your business goals and what you need. We'll explain how we can help attract more customers and save you time." },
+    { n: "02", title: "Planning", body: "We create a detailed plan showing exactly what we're building, how much it costs, and when it will be ready." },
+    { n: "03", title: "Development", body: "We build your project and keep you updated. You can review progress and request changes as we go." },
+    { n: "04", title: "Launch & Support", body: "We test everything thoroughly, help you launch, and provide support to ensure your business runs smoothly." }
   ];
 
-  /* ── pricing data ── */
-  const tiers = [
-    {
-      tier: "Starter", name: "Website", price: "$3,500", pkrPrice: "PKR 975,000", featured: false,
-      features: ["Professional custom website", "Mobile-friendly design", "Fast loading speed", "Easy content updates", "1 month of support included"]
-    },
-    {
-      tier: "Professional", name: "Website + Features", price: "$9,800", pkrPrice: "PKR 2,730,000", featured: true,
-      features: ["Everything in Starter", "Custom functionality (forms, booking, etc.)", "Basic automation setup", "SEO optimization", "3 months of support"]
-    },
-    {
-      tier: "Enterprise", name: "Full Solution", price: "Custom", pkrPrice: "Custom Pricing", featured: false,
-      features: ["Complete business application", "Advanced automation", "Custom integrations", "Full branding package", "Ongoing support available"]
-    }
+  /* ── pricing data (ALIGNED WITH SERVICES) ── */
+const tiers = [
+  {
+    tier: "Web Presence",
+    name: "Website Development",
+    price: "$199",
+    pkrPrice: "PKR 40,000",
+    featured: false,
+    cta: "Get Website Quote",
+    features: [
+      "Professional business website",
+      "Mobile-friendly & fast loading",
+      "Clear content structure",
+      "Basic SEO setup",
+      "1 month support"
+    ]
+  },
+  {
+    tier: "Growth Stack",
+    name: "Website + Automation",
+    price: "$699",
+    pkrPrice: "PKR 150,000",
+    featured: true,
+    cta: "Book Free Consultation",
+    features: [
+      "Everything in Web Presence",
+      "Custom forms or booking system",
+      "Basic AI / automation setup",
+      "SEO optimization",
+      "3 months support"
+    ]
+  },
+  {
+    tier: "Digital Partner",
+    name: "Complete Solution",
+    price: "Custom",
+    pkrPrice: "Custom Pricing",
+    featured: false,
+    cta: "Discuss Your Project",
+    features: [
+      "Custom business application",
+      "Advanced automation & workflows",
+      "Design & branding support",
+      "Third-party integrations",
+      "Ongoing support & scaling"
+    ]
+  }
+];
+
+  /* ── WHO WE WORK WITH DATA ── */
+  const whoWeWorkWith = [
+    { title: "Clinics & Healthcare", desc: "Patient portals, appointment systems, automated reminders" },
+    { title: "Local & Online Businesses", desc: "Websites that attract customers and generate leads" },
+    { title: "Startups & Founders", desc: "MVP development, branding, automation to scale faster" },
+    { title: "Service-Based Companies", desc: "Booking systems, client portals, workflow automation" }
   ];
 
   /* ─────────────────────────────────────────
@@ -386,25 +430,28 @@ export default function AutomyxLanding() {
             <h1 style={{
               ...displayMd, fontSize: "clamp(42px, 7vw, 72px)", color: WHITE, margin: "0 0 24px"
             }}>
-              Websites and software<br />
-              that help your business{" "}
-              <em style={{ fontStyle: "italic", color: ACCENT }}>grow.</em>
+              Websites and Apps that<br />
+              attract customers and{" "}
+              <em style={{ fontStyle: "italic", color: ACCENT }}>save your time.</em>
             </h1>
           </Reveal>
           <Reveal delay={2}>
-            <p style={{ fontSize: 17, color: "rgba(255,255,255,.38)", maxWidth: 460, margin: "0 auto 40px", lineHeight: 1.6, fontWeight: 300 }}>
-              We build professional websites, custom applications, and automated systems that help you attract customers and run your business efficiently.
+            <p style={{ fontSize: 17, color: "rgba(255,255,255,.38)", maxWidth: 480, margin: "0 auto 16px", lineHeight: 1.6, fontWeight: 300 }}>
+              We build professional websites, custom applications, and automated systems that help you grow your business and work more efficiently.
+            </p>
+            <p style={{ fontSize: 13, color: "rgba(200,169,110,.7)", marginBottom: 40, fontWeight: 400 }}>
+              Serving clients in Pakistan & internationally
             </p>
           </Reveal>
           <Reveal delay={3}>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-              <a href="#contact" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("contact"); }} style={{
+              <a href="#pricing" className="amx-btn-primary" onClick={(e) => { e.preventDefault(); scrollTo("pricing"); }} style={{
                 display: "inline-flex", alignItems: "center", gap: 10,
                 background: ACCENT, color: INK, padding: "14px 30px", borderRadius: 6,
                 fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
                 transition: "background .3s, transform .2s", cursor: "pointer"
               }}>
-                Get started
+                Get Website Quote
                 <span className="amx-btn-arrow" style={{ display: "inline-flex", transition: "transform .3s" }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
                 </span>
@@ -471,6 +518,7 @@ export default function AutomyxLanding() {
               <Reveal key={i} delay={i + 1}>
                 <div className="amx-svc" style={{ 
                   background: INK, 
+                  height: "100%",
                   padding: "44px 32px", 
                   transition: "all .4s",
                   cursor: "default",
@@ -480,7 +528,9 @@ export default function AutomyxLanding() {
                   backgroundOrigin: "border-box",
                   backgroundClip: "padding-box, border-box",
                   position: "relative",
-                  overflow: "hidden"
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column"
                 }}
                   onMouseEnter={e => {
                     e.currentTarget.style.transform = "translateY(-4px)";
@@ -504,7 +554,7 @@ export default function AutomyxLanding() {
                   </div>
                   <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: WHITE, marginBottom: 12 }}>{svc.title}</h3>
                   <p style={{ fontSize: 14, color: "rgba(255,255,255,.36)", lineHeight: 1.7 }}>{svc.body}</p>
-                  <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,.08)" }}>
+                  <div style={{ marginTop: "auto", paddingTop: 20, borderTop: "1px solid rgba(255,255,255,.08)" }}>
                     <span style={{ fontSize: 10, color: ACCENT, letterSpacing: "0.12em", fontWeight: 600 }}>OUTCOME </span>
                     <span style={{ fontSize: 13, color: "rgba(255,255,255,.35)", display: "block", marginTop: 6, lineHeight: 1.5 }}>{svc.outcome}</span>
                   </div>
@@ -515,8 +565,38 @@ export default function AutomyxLanding() {
         </div>
       </section>
 
+      {/* ══════════ WHO WE WORK WITH ══════════ */}
+      <section style={{ background: CREAM, padding: "72px 32px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <span style={{ ...labelStyle, color: ACCENT }}>Who We Work With</span>
+              <h2 style={{ ...displayMd, fontSize: "clamp(28px, 3.8vw, 38px)", color: INK }}>
+                We work best with businesses ready to grow
+              </h2>
+            </div>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="amx-svc-grid">
+            {whoWeWorkWith.map((item, i) => (
+              <Reveal key={i} delay={i + 1}>
+                <div className="amx-who-card" style={{
+                  background: WHITE,
+                  padding: "32px 24px",
+                  borderRadius: 10,
+                  border: "1px solid rgba(14,14,15,.08)",
+                  transition: "border-color .3s, box-shadow .3s"
+                }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 550, color: ACCENT, marginBottom: 10 }}>{item.title}</h3>
+                  <p style={{ fontSize: 14, color: "rgba(14,14,15,.5)", lineHeight: 1.2 }}>{item.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══════════ WHY + PROCESS (merged row) ══════════ */}
-      <section style={{ background: CREAM, padding: "88px 32px" }}>
+      <section style={{ background: CREAM, padding: "30px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72 }} className="amx-hero-grid">
 
           {/* WHY */}
@@ -585,8 +665,11 @@ export default function AutomyxLanding() {
               <h2 style={{ ...displayMd, fontSize: "clamp(28px, 4vw, 42px)", color: WHITE, marginBottom: 12 }}>
                 Transparent pricing for every budget
               </h2>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,.35)", maxWidth: 440, margin: "0 auto", lineHeight: 1.6 }}>
-                Choose a package that fits your needs. We'll provide an exact quote after understanding your specific requirements.
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,.35)", maxWidth: 480, margin: "0 auto 8px", lineHeight: 1.6 }}>
+                Pricing may vary based on project scope, features, and business location. Final quotes shared after understanding your needs.
+              </p>
+              <p style={{ fontSize: 12, color: "rgba(200,169,110,.6)", fontStyle: "italic" }}>
+                Limited projects accepted each month to ensure quality
               </p>
             </div>
           </Reveal>
@@ -638,7 +721,7 @@ export default function AutomyxLanding() {
                       transition: "background .3s"
                     }}
                   >
-                    Let's discuss
+                    {t.cta}
                   </button>
                 </div>
               </Reveal>
@@ -668,7 +751,7 @@ export default function AutomyxLanding() {
             </p>
           </Reveal>
           <Reveal delay={3}>
-            <a href="mailto:hello@automyx.digital" className="amx-btn-primary" style={{
+            <a href="mailto:automyxdigital@gmail.com" className="amx-btn-primary" style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               background: ACCENT, color: INK, padding: "15px 34px", borderRadius: 6,
               fontSize: 14, fontWeight: 500, textDecoration: "none", letterSpacing: "0.04em",
@@ -685,7 +768,7 @@ export default function AutomyxLanding() {
 
       {/* ══════════ WHATSAPP FLOATING BUTTON ══════════ */}
       <a 
-        href="https://wa.me/923001234567?text=Hi%2C%20I%27m%20interested%20in%20your%20services" 
+        href="https://wa.me/923184671907?text=Hi%2C%20I%27m%20interested%20in%20your%20services" 
         target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-float"
@@ -711,7 +794,7 @@ export default function AutomyxLanding() {
             {/* Social icons */}
             <div style={{ display: "flex", gap: 14 }}>
               <a 
-                href="https://linkedin.com/company/automyx" 
+                href="https://linkedin.com/company/automyxdigital" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{
