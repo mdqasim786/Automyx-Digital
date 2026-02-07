@@ -821,7 +821,7 @@ const tiers = [
                 </svg>
               </a>
               <a 
-                href="https://facebook.com/automyx" 
+                href="https://www.facebook.com/profile.php?id=61587449673972" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{
